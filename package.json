@@ -1,0 +1,79 @@
+{
+  "name": "n8n-nodes-turso",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Turso distributed SQLite database platform providing 12 resources and 50+ operations for database management, groups, tokens, and organization administration.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-turso.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-turso#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-turso/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "turso",
+    "sqlite",
+    "libsql",
+    "database",
+    "distributed-database",
+    "edge-database",
+    "workflow-automation"
+  ],
+  "main": "dist/nodes/Turso/Turso.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/TursoApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Turso/Turso.node.js",
+      "dist/nodes/Turso/TursoTrigger.node.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.30.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
